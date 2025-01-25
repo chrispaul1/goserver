@@ -4,6 +4,10 @@
 # as the base image
 FROM debian:stable-slim
 
-# execute the 'echo "hello world"'
+# COPY source destination
+COPY goserver /bin/goserver
+
+ENV PORT=8080
+
 # command when the container runs
-CMD ["echo", "hello world"]
+CMD ["/bin/goserver"]
